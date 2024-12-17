@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+<h1>Create task</h1>
+
+<form action="/task/create/" method="POST">
+    {% csfr_token %}
+
+    {{form}}
+
+    <button>
+        Save
+    </button>
+</form>
+{% endblock %}
+

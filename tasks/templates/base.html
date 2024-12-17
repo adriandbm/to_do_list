@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do APP</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/tasks">Tasks</a>
+            </li>
+            
+              {% if user.is_authenticated %}
+
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="/signup">Sign up</a>
+            </li>
+            <li>
+                <a href="/signin">Sign in</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock content %}
+    
+</body>
+</html>
